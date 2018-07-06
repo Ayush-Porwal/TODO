@@ -1,0 +1,9 @@
+.effect li:hover{
+    background-color: #5c544b48;
+}
+
+@media (max-width: 501px) and (min-width:362px){
+    #ignore{
+        display: none;
+    }
+}

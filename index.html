@@ -1,69 +1,83 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
+    <!--Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <!--Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <!--Font Awesome Icon CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <!--ICON-->
+    <link rel="icon" type="image/png" href="./images/head-icon.png" />
+    <!--Custom styles-->
+    <link rel="stylesheet" href="./css/style.css">
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Chela+One" rel="stylesheet">
     <title>ToDo-App</title>
   </head>
   <body>
-    
-    <div class="jumbotron jumbotron-fluid bg-info">
-        <h1 class="display-3 text-white text-center">ToDo List</h1>
-        <p class="lead text-white text-center">Plan your routine here</p>
-        <div class="container">
-            <div class="input-group">
-                <input type="text" id="search-bar" class="form-control" placeholder="search here...">
+
+    <!--Navbar-->  
+    <nav class="navbar navbar-expand-sm" style="background-color:#40474e;">
+        <a class="navbar-brand" href="#" style="color: white;">
+            <img rel="brand-icon" src="./images/head-icon.png" width="40" height="40">
+            ToDo
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-list">
+            <i class="fas fa-bars fa-lg" style="color: white"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="nav-list">
+            <ul class="navbar-nav ml-auto mr-4 effect">
+                <li class="nav-item active">
+                    <a href="#" class="nav-link lead mr-3" style="color: white;"><i class="fas fa-home fa-lg mr-2"></i>Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link lead mr-3" data-toggle="modal" data-target="#user-login" style="color: white;"><i class="fas fa-user fa-lg mr-2"></i>Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link lead mr-3" style="color: white;"><i class="fas fa-phone fa-lg mr-2"></i>Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid" style="margin-top: 3%;">
+        <div class="row">
+            <div class="col-sm-12 col-lg-6 display-4 text-center" style="margin: auto 0;">
+                Organise your work,<br id="ignore">enjoy life!<br>
+                <button type="button" id="get-started" class="btn btn-outline-secondary btn-lg" data-toggle="modal" data-target="#user-login">Get started here!</button>
+            </div>
+            <div class="col-sm-12 col-lg-6">
+                <img id="indeximage" class="img-fluid" style="max-width: 100%; height: auto;" src="./images/indeximage.png">
             </div>
         </div>
-    </div>
-    <div class="container">
-        <p class="lead">Tasks left in your List</p>
-        <hr>
-    </div>
-    <div class="container">
-        <ul class="my-bag" style="list-style:none;">
-            <li class="d-flex">
-                <span class="lead">Buy the notebook</span>
-                <button type="button" class="ml-auto btn btn-outline-danger">Delete</button>
-            </li>
-            <hr>
-            <li class="d-flex">
-                <span class="lead">Buy a SSD Hard-disk</span>
-                <button type="button" class="ml-auto btn btn-outline-danger">Delete</button>
-            </li>
-            <hr>
-            <li class="d-flex">
-                <span class="lead">Make a todo app</span>
-                <button type="button" class="ml-auto btn btn-outline-danger">Delete</button>
-            </li>
-            <hr>
-            <li class="d-flex">
-                <span class="lead">Learn WebDevlopment</span>
-                <button type="button" class="ml-auto btn btn-outline-danger">Delete</button>
-            </li>
-            <hr>
-        </ul>
     </div>
 
-    <div class="container">
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Write here to add...">
-            <div class="input-group-append">
-                <button class="btn btn-outline-success btn-lg" type="button">Add</button>
+    <!--Login Modal-->
+    <div class="modal" id="user-login">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                        <span class="lead font-weight-normal">Please Login Using</span>
+                </div>
+                <div class="modal-body">
+                    <button type="button" class="btn btn-outline-primary btn-block"><i class="fab fa-facebook-f fa-lg" style="color: #4267b2;"></i><span class="lead ml-2 font-weight-normal">Facebook</span></button>
+                    <button type="button" class="btn btn-outline-primary btn-block"><i class="fab fa-google-plus-g fa-lg" style="color: #ea4335"></i><span class="lead ml-2 font-weight-normal">Google</span></button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-primary" data-dismiss="modal">No, Thanks!</button>
+                </div>
             </div>
         </div>
     </div>
-    <!-- Adding functionality to buttons -->
-    <script src="./scripts/events.js"></script>
+    <!--Adding Animations-->
+    <script src="./scripts/animate.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
   </body>
 </html>
