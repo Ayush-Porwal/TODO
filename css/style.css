@@ -2,6 +2,10 @@
     background-color: #5c544b48;
 }
 
+.modal-body a{
+    text-decoration: none;
+}
+
 @media (max-width: 501px) and (min-width:362px){
     #ignore{
         display: none;
